@@ -59,7 +59,7 @@ const Home = () => {
     // data.traerPropuesta[].variable
     return(
         <>
-            <div className="w-screen h-screen">
+            <section className="w-screen h-screen">
                 <div className="w-[33rem] h-96">
                     {datos && datos.traerPropuestas ? (
                         publicadas.map((item, index) => (
@@ -82,10 +82,10 @@ const Home = () => {
                         ))
                     ): "No hay propuestas disponibles"}
                 </div>
-            </div>
-            <div>
+            </section>
+            <section>
                 <Noticias/>
-            </div>
+            </section>
         </>
     )
 }
