@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/card"
 import {useEffect, useState} from "react"
 import {Heart} from "lucide-react"
-import Noticias from "@/views/home/Noticias.tsx"
+import News from "@/views/home/News.tsx"
 
 
 const Home = () => {
@@ -84,7 +84,7 @@ const Home = () => {
                 </div>
             </section>
             <section>
-                <Noticias/>
+                <News/>
             </section>
         </>
     )
