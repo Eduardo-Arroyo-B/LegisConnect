@@ -9,9 +9,11 @@ import {
 import {useEffect, useState} from "react"
 import {Heart} from "lucide-react"
 import News from "@/views/home/News.tsx"
-
+import useUserAuth from "@/helpers/userAuth.tsx";
 
 const Home = () => {
+    // Valida la el token de la session
+    useUserAuth()
 
     // Estado de likes
     const [likes, setLikes] = useState({})
@@ -52,18 +54,18 @@ const Home = () => {
     }, [])
 
     // Filtrar publicaciones aprobadas
+    // @ts-ignore
     const publicadas = datos?.traerPropuestas.filter(p => p.Status === "PUBLICADO")
 
     console.log(publicadas)
 
-    // data.traerPropuesta[].variable
     return(
         <>
             <section className="w-screen h-screen">
                 <div className="w-[33rem] h-96">
                     {datos && datos.traerPropuestas ? (
                         publicadas.map((item, index) => (
-                            <Card key={index} className="w-full h-full ml-[38rem] mt-10 flex flex-col">
+                            <Card key={index} className="w-full h-full ml-[25rem] mt-10 flex flex-col">
                                 <CardHeader>
                                     <CardTitle>{item.title}</CardTitle>
                                     <CardDescription>Datos</CardDescription>
