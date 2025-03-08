@@ -57,8 +57,6 @@ const Home = () => {
     // @ts-ignore
     const publicadas = datos?.traerPropuestas.filter(p => p.Status === "PUBLICADO")
 
-    console.log(publicadas)
-
     return(
         <>
             <section className="w-screen h-screen">
