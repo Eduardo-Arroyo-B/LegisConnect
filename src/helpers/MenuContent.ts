@@ -14,8 +14,8 @@ const menuItems = [
         icon: iconPencil
     },
     {
-        title: "Configuracion",
-        path: "/#",
+        title: "Cerrar Session",
+        path: "/",
         icon: iconSettings
     }
 ]

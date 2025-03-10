@@ -5,7 +5,8 @@ import {
     CardTitle,
 } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import {useState} from "react";
+import { useState } from "react";
+import { toast } from "sonner";
 
 
 const createProposals = () => {
@@ -31,6 +32,29 @@ const createProposals = () => {
                 body: JSON.stringify(data)
             })
             const dataResponse = await response.json()
+
+            if (response.ok) {
+                toast( "Mensaje",{
+                    description: dataResponse.message
+                })
+            } else {
+                toast("Error",{
+                    description: dataResponse.errores?.length > 0 ? (
+                            <ul>
+                                {dataResponse.errores.map((e, index) => (
+                                    <li key={index}>{e.msg}</li>
+                                ))}
+                            </ul>
+                        ) :
+                        <ul>
+                            <li>{dataResponse.message}</li>
+                        </ul>,
+                    action: {
+                        label: "Cerrar",
+                        onClick: () => console.log("cerrar toast")
+                    }
+                })
+            }
 
             console.log(dataResponse)
             setData({
@@ -59,7 +83,7 @@ const createProposals = () => {
                                     placeholder="Escribir el titulo"
                                     onChange={handleChange}
                                     value={data.title}
-                                    className="border-solid border-2 rounded-lg border-black"
+                                    className="border-solid border rounded-lg border-[#996ea1]"
                                 />
                             </CardHeader>
                             <CardContent className="h-3/5">
@@ -69,7 +93,7 @@ const createProposals = () => {
                                     placeholder="Escriba la propuesta aqui..."
                                     onChange={handleChange}
                                     value={data.content}
-                                    className="border-solid border-2 rounded-lg border-black w-full h-full"
+                                    className="border-solid border rounded-lg border-[#996ea1] w-full h-full"
                                 />
                             </CardContent>
                             <Button type="submit" className="mt-2 ml-6">Subir Propuesta</Button>
