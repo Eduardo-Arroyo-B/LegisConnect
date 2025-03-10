@@ -10,7 +10,7 @@ const menuItems = [
     },
     {
         title: "Crear Propuesta",
-        path: "/#",
+        path: "/proposals",
         icon: iconPencil
     },
     {

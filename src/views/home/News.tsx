@@ -36,12 +36,12 @@ const News = () => {
 
     return (
         <>
-            <section className="mt-10 mr-12">
+            <section className="mt-10 mr-12 overflow-y-auto overflow-x-hidden h-4/5 fixed right-0 top-0">
                 <label className="flex justify-center mb-6 border rounded-full border-[#996ea1] bg-[#d0a2d8]">Ultimas Noticias</label>
                 <div className="h-60 w-64">
                     {data ? (
                         data.map((item, index) => (
-                            <Card className="w-full h-full mb-8" key={index}>
+                            <Card className="w-full h-full mb-8 border-[#996ea1] bg-[#d0a2d8]" key={index}>
                                 <CardHeader>
                                     <CardTitle>{item.mission_name}</CardTitle>
                                     <CardDescription>Fecha de lanzamiento: {new Date(item.launch_date_local).toLocaleDateString("en-ES", {
@@ -54,11 +54,9 @@ const News = () => {
                                     })}</CardDescription>
                                 </CardHeader>
                                 <CardContent>
-                                    <p>Contenido noticia</p>
+                                    <p>{item.details?.length > 100
+                                        ? item.details.substring(0,100) + "..." : "No hay datos disponibles"}</p>
                                 </CardContent>
-                                <CardFooter>
-                                    <p>Footer contenido</p>
-                                </CardFooter>
                             </Card>
                         ))
                     ) : "No hay noticias disponibles"}

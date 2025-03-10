@@ -1,15 +1,15 @@
 import {
     Card,
     CardContent,
-    CardDescription,
     CardFooter,
     CardHeader,
     CardTitle,
 } from "@/components/ui/card"
+import Legislacion from "../../assets/Legislacion.png"
 import {useEffect, useState} from "react"
 import {Heart} from "lucide-react"
 import News from "@/views/home/News.tsx"
-import useUserAuth from "@/helpers/userAuth.tsx";
+import useUserAuth from "@/helpers/userAuth.tsx"
 
 const Home = () => {
     // Valida la el token de la session
@@ -60,16 +60,16 @@ const Home = () => {
     return(
         <>
             <section className="w-screen h-screen">
-                <div className="w-[33rem] h-96">
+                <div className="w-[33rem] h-[27rem]">
                     {datos && datos.traerPropuestas ? (
                         publicadas.map((item, index) => (
-                            <Card key={index} className="w-full h-full ml-[25rem] mt-10 flex flex-col">
+                            <Card key={index} className="w-full h-full ml-[25rem] mt-10 flex flex-col border-[#996ea1]">
                                 <CardHeader>
                                     <CardTitle>{item.title}</CardTitle>
-                                    <CardDescription>Datos</CardDescription>
                                 </CardHeader>
                                 <CardContent className="flex-grow">
                                     <p>{item.content}</p>
+                                    <img src={Legislacion} alt="Imagen de legislacion" className="mt-6"/>
                                 </CardContent>
                                 <CardFooter>
                                     <Heart
