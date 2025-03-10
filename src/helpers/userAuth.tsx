@@ -23,6 +23,7 @@ const useUserAuth = () => {
                     console.log("Token validado");
                 }
             } catch (error) {
+                // @ts-ignore
                 console.error({ errores: error.message });
             }
         };

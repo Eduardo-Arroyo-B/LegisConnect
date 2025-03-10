@@ -36,11 +36,13 @@ const Login = () => {
     console.log(formData)
 
     // Guarda los cambios de cada input y los escribe en su respectivo campo
+    // @ts-ignore
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value })
     }
 
     // Envia los datos al backend
+    // @ts-ignore
     const handleSubmit = async (e) => {
         e.preventDefault()
 
@@ -75,6 +77,7 @@ const Login = () => {
                 toast("Error",{
                     description: data.errores?.length > 0 ? (
                         <ul>
+                            {/*// @ts-ignore*/}
                             {data.errores.map((e, index) => (
                                 <li key={index}>{e.msg}</li>
                             ))}
@@ -102,6 +105,7 @@ const Login = () => {
             })
 
             const data = await response.json()
+            // @ts-ignore
             console.log(data.errores.map((e) => e.msg))
 
             // Alerta de la respuesta si es correcta o no
@@ -127,6 +131,7 @@ const Login = () => {
                 console.log("A ocurrido un error")
 
                 toast("Error",{
+                    // @ts-ignore
                     description: data.errores.map((e, index) => (
                         <ul key={index}>
                             <li key={index}>{e.msg}</li>

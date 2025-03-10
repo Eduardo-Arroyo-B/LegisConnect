@@ -5,8 +5,8 @@ import {
     CardTitle,
 } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { useState } from "react";
-import { toast } from "sonner";
+import { JSXElementConstructor, Key, ReactElement, ReactNode, ReactPortal, useState} from "react";
+import {toast} from "sonner";
 
 
 const createProposals = () => {
@@ -15,11 +15,11 @@ const createProposals = () => {
         content: "",
     })
 
-    const handleChange = (e) => {
-        setData({ ...data, [e.target.name]: e.target.value })
+    const handleChange = (e: { target: { name: any; value: any; }; }) => {
+        setData({...data, [e.target.name]: e.target.value})
     }
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e: { preventDefault: () => void; }) => {
         e.preventDefault()
 
         const url = "https://api-legisconnect-production.up.railway.app/proposals/createProposal"
@@ -28,20 +28,22 @@ const createProposals = () => {
             const response = await fetch(url, {
                 method: "POST",
                 credentials: "include",
-                headers: { "Content-Type": "application/json" },
+                headers: {"Content-Type": "application/json"},
                 body: JSON.stringify(data)
             })
             const dataResponse = await response.json()
 
             if (response.ok) {
-                toast( "Mensaje",{
+                toast("Mensaje", {
                     description: dataResponse.message
                 })
             } else {
-                toast("Error",{
+                toast("Error", {
                     description: dataResponse.errores?.length > 0 ? (
                             <ul>
-                                {dataResponse.errores.map((e, index) => (
+                                {dataResponse.errores.map((e: {
+                                    msg: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | null | undefined;
+                                }, index: Key | null | undefined) => (
                                     <li key={index}>{e.msg}</li>
                                 ))}
                             </ul>
@@ -62,6 +64,7 @@ const createProposals = () => {
                 content: ""
             })
         } catch (error) {
+            // @ts-ignore
             console.log("Ha ocurrido un error: ", error.message)
         }
     }

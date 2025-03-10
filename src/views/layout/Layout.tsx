@@ -1,9 +1,8 @@
 import {
     Sidebar,
     SidebarContent,
-    SidebarFooter,
     SidebarGroup, SidebarGroupContent, SidebarGroupLabel,
-    SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarProvider, SidebarTrigger,
+    SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarProvider, SidebarTrigger,
 } from "@/components/ui/sidebar"
 import menuContent from "@/helpers/MenuContent.ts";
 import {Outlet} from "react-router-dom";

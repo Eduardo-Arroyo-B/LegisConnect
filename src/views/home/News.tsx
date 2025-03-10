@@ -2,11 +2,10 @@ import {
     Card,
     CardContent,
     CardDescription,
-    CardFooter,
     CardHeader,
     CardTitle,
 } from "@/components/ui/card"
-import {useEffect, useState} from "react";
+import {Key, ReactElement, ReactNode, ReactPortal, useEffect, useState} from "react";
 
 const News = () => {
 
@@ -30,17 +29,23 @@ const News = () => {
     // Llama la funcion cuando se monta el componente
     useEffect(() => {
         fetchData()
-    },[])
+    }, [])
 
     console.log(data)
 
     return (
         <>
             <section className="mt-10 mr-12 overflow-y-auto overflow-x-hidden h-4/5 fixed right-0 top-0">
-                <label className="flex justify-center mb-6 border rounded-full border-[#996ea1] bg-[#d0a2d8]">Ultimas Noticias</label>
+                <label className="flex justify-center mb-6 border rounded-full border-[#996ea1] bg-[#d0a2d8]">Ultimas
+                    Noticias</label>
                 <div className="h-60 w-64">
                     {data ? (
-                        data.map((item, index) => (
+                        // @ts-ignore
+                        data.map((item: {
+                            mission_name: string | number | boolean | ReactElement | Iterable<ReactNode> | ReactPortal | null | undefined;
+                            launch_date_local: string | number | Date;
+                            details: string;
+                        }, index: Key | null | undefined) => (
                             <Card className="w-full h-full mb-8 border-[#996ea1] bg-[#d0a2d8]" key={index}>
                                 <CardHeader>
                                     <CardTitle>{item.mission_name}</CardTitle>
