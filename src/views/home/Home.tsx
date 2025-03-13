@@ -48,7 +48,7 @@ const Home = () => {
         }
     }
 
-    // Llama la funcion cuando el componente se Monta
+    // Llama la funcion cuando el componente se monta
     useEffect(() => {
         fetchData()
     }, [])
