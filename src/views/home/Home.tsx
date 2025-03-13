@@ -1,6 +1,7 @@
 import {
     Card,
     CardContent,
+    CardDescription,
     CardFooter,
     CardHeader,
     CardTitle,
@@ -63,7 +64,7 @@ const Home = () => {
     return(
         <>
             <section className="w-screen h-screen">
-                <div className="w-[33rem] h-[27rem]">
+                <div className="w-[33rem] h-[30rem]">
                     {/*// @ts-ignore*/}
                     {datos && datos.traerPropuestas ? (
                         // @ts-ignore
@@ -72,8 +73,14 @@ const Home = () => {
                                 <CardHeader>
                                     <CardTitle>{item.title}</CardTitle>
                                 </CardHeader>
+                                <CardDescription className="ml-6">{new Date(item.createdAt).toLocaleDateString("en-ES", {
+                                    weekday: "long",
+                                    year: "numeric",
+                                    month: "short",
+                                    day: "numeric",
+                                })}</CardDescription>
                                 <CardContent className="flex-grow">
-                                    <p>{item.content}</p>
+                                    <p>{item.content.substring(0,100) + "..."}</p>
                                     <img src={Legislacion} alt="Imagen de legislacion" className="mt-6"/>
                                 </CardContent>
                                 <CardFooter>

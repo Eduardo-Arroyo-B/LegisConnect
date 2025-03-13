@@ -17,6 +17,11 @@ const menuItems = [
         title: "Cerrar Session",
         path: "/",
         icon: iconSettings
+    },
+    {
+        title: "Visualizacion Propuestas",
+        path: "/userProposals",
+        icon: iconSettings
     }
 ]
 

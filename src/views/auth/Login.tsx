@@ -70,6 +70,8 @@ const Login = () => {
             if (response.ok) {
                 console.log("Datos correctos, Iniciando Session")
 
+                localStorage.setItem("userId", data.id)
+
                 navigate("/home")
             } else {
                 console.log("Datos incorrectos")

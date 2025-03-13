@@ -756,10 +756,6 @@ body {
   margin-top: 1.5rem;
 }
 
-.mt-8 {
-  margin-top: 2rem;
-}
-
 .flex {
   display: flex;
 }
@@ -841,8 +837,8 @@ body {
   height: 20px;
 }
 
-.h-\[27rem\] {
-  height: 27rem;
+.h-\[30rem\] {
+  height: 30rem;
 }
 
 .h-full {
@@ -1092,10 +1088,6 @@ body {
   border-width: 1px;
 }
 
-.border-2 {
-  border-width: 2px;
-}
-
 .border-b {
   border-bottom-width: 1px;
 }
@@ -1119,11 +1111,6 @@ body {
 .border-\[\#996ea1\] {
   --tw-border-opacity: 1;
   border-color: rgb(153 110 161 / var(--tw-border-opacity, 1));
-}
-
-.border-black {
-  --tw-border-opacity: 1;
-  border-color: rgb(0 0 0 / var(--tw-border-opacity, 1));
 }
 
 .border-destructive {
