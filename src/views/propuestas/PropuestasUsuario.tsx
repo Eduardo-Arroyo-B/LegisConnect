@@ -32,7 +32,7 @@ const PropuestasUsuario = () => {
     }, [])
 
     return (
-        <section className="w-screen h-screen">
+        <section className="w-screen h-screen font-mono">
             <div className="flex justify-center items-center mt-10">Mis propuestas</div>
             {/*// @ts-ignore*/}
             {data && data.length > 0 ? (
