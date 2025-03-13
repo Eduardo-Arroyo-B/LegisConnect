@@ -35,8 +35,8 @@ const News = () => {
 
     return (
         <>
-            <section className="mt-10 mr-12 overflow-y-auto overflow-x-hidden h-4/5 fixed right-0 top-0">
-                <label className="flex justify-center mb-6 border rounded-full border-[#996ea1] bg-[#d0a2d8]">Ultimas
+            <section className="mt-10 mr-12 overflow-y-auto overflow-x-hidden h-4/5 fixed right-0 top-0 font-mono">
+                <label className="flex justify-center mb-6 border rounded-full">Ultimas
                     Noticias</label>
                 <div className="h-60 w-64">
                     {data ? (
@@ -46,7 +46,7 @@ const News = () => {
                             launch_date_local: string | number | Date;
                             details: string;
                         }, index: Key | null | undefined) => (
-                            <Card className="w-full h-full mb-8 border-[#996ea1] bg-[#d0a2d8]" key={index}>
+                            <Card className="w-full h-full mb-8" key={index}>
                                 <CardHeader>
                                     <CardTitle>{item.mission_name}</CardTitle>
                                     <CardDescription>Fecha de lanzamiento: {new Date(item.launch_date_local).toLocaleDateString("en-ES", {

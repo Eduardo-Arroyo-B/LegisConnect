@@ -632,6 +632,10 @@ body {
   position: relative;
 }
 
+.sticky {
+  position: sticky;
+}
+
 .inset-0 {
   inset: 0px;
 }
@@ -732,12 +736,16 @@ body {
   margin-left: 1.5rem;
 }
 
-.ml-\[25rem\] {
-  margin-left: 25rem;
+.ml-\[20rem\] {
+  margin-left: 20rem;
 }
 
 .mr-12 {
   margin-right: 3rem;
+}
+
+.mr-6 {
+  margin-right: 1.5rem;
 }
 
 .mt-10 {
@@ -756,8 +764,12 @@ body {
   margin-top: 1.5rem;
 }
 
-.mr-6 {
-  margin-right: 1.5rem;
+.ml-\[15rem\] {
+  margin-left: 15rem;
+}
+
+.ml-\[10rem\] {
+  margin-left: 10rem;
 }
 
 .flex {
@@ -795,10 +807,6 @@ body {
 
 .h-3\/5 {
   height: 60%;
-}
-
-.h-32 {
-  height: 8rem;
 }
 
 .h-4 {
@@ -875,10 +883,6 @@ body {
 
 .w-3\/4 {
   width: 75%;
-}
-
-.w-36 {
-  width: 9rem;
 }
 
 .w-4 {
@@ -1120,11 +1124,6 @@ body {
   border-style: solid;
 }
 
-.border-\[\#996ea1\] {
-  --tw-border-opacity: 1;
-  border-color: rgb(153 110 161 / var(--tw-border-opacity, 1));
-}
-
 .border-destructive {
   border-color: hsl(var(--destructive));
 }
@@ -1135,11 +1134,6 @@ body {
 
 .border-sidebar-border {
   border-color: hsl(var(--sidebar-border));
-}
-
-.bg-\[\#d0a2d8\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(208 162 216 / var(--tw-bg-opacity, 1));
 }
 
 .bg-background {
@@ -1278,6 +1272,10 @@ body {
 
 .text-center {
   text-align: center;
+}
+
+.font-mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 .text-base {

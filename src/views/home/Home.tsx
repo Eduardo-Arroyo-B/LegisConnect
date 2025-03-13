@@ -63,22 +63,25 @@ const Home = () => {
 
     return(
         <>
-            <section className="w-screen h-screen">
+            <section>
+                <News/>
+            </section>
+            <section className="w-screen h-screen font-mono">
                 <div className="w-[33rem] h-[30rem]">
                     {/*// @ts-ignore*/}
                     {datos && datos.traerPropuestas ? (
                         // @ts-ignore
                         publicadas.map((item, index) => (
-                            <Card key={index} className="w-full h-full ml-[25rem] mt-10 flex flex-col border-[#996ea1]">
+                            <Card key={index} className="w-full h-full ml-[10rem] mt-10 flex flex-col">
                                 <CardHeader>
                                     <CardTitle>{item.title}</CardTitle>
+                                    <CardDescription>{new Date(item.createdAt).toLocaleDateString("es-ES", {
+                                        weekday: "long",
+                                        year: "numeric",
+                                        month: "short",
+                                        day: "numeric"
+                                    })}</CardDescription>
                                 </CardHeader>
-                                <CardDescription className="ml-6">{new Date(item.createdAt).toLocaleDateString("es-ES", {
-                                    weekday: "long",
-                                    year: "numeric",
-                                    month: "short",
-                                    day: "numeric"
-                                })}</CardDescription>
                                 <CardContent className="flex-grow">
                                     <p>{item.content.substring(0,100) + "..."}</p>
                                     <img src={Legislacion} alt="Imagen de legislacion" className="mt-6"/>
@@ -96,9 +99,6 @@ const Home = () => {
                         ))
                     ): "No hay propuestas disponibles"}
                 </div>
-            </section>
-            <section>
-                <News/>
             </section>
         </>
     )

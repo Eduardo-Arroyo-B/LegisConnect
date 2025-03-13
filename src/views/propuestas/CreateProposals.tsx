@@ -74,32 +74,32 @@ const createProposals = () => {
     return(
         <>
             <section className="h-screen w-screen">
-                <label className="flex justify-center items-center mt-20">Crea tu propuesta</label>
+                <label className="flex justify-center items-center mt-20 font-mono">Crea tu propuesta</label>
                 <div className="flex justify-center items-center">
                     <form className="mt-20 h-96 w-96" onSubmit={handleSubmit}>
-                        <Card className="h-full w-full border-[#996ea1]">
+                        <Card className="h-full w-full">
                             <CardHeader>
-                                <CardTitle>Titulo de la propuesta:</CardTitle>
+                                <CardTitle className="font-mono">Titulo de la propuesta</CardTitle>
                                 <input
                                     type="text"
                                     name="title"
                                     placeholder="Escribir el titulo"
                                     onChange={handleChange}
                                     value={data.title}
-                                    className="border-solid border rounded-lg border-[#996ea1]"
+                                    className="border-solid border rounded-lg p-1"
                                 />
                             </CardHeader>
                             <CardContent className="h-3/5">
-                                <p>Contenido de la propuesta:</p>
+                                <p className="font-mono">Contenido de la propuesta</p>
                                 <textarea
                                     name="content"
                                     placeholder="Escriba la propuesta aqui..."
                                     onChange={handleChange}
                                     value={data.content}
-                                    className="border-solid border rounded-lg border-[#996ea1] w-full h-full"
+                                    className="border-solid border rounded-lg w-full h-full p-1"
                                 />
                             </CardContent>
-                            <Button type="submit" className="mt-2 ml-6">Subir Propuesta</Button>
+                            <Button type="submit" className="mt-2 ml-6 font-mono">Subir Propuesta</Button>
                         </Card>
                     </form>
                 </div>
