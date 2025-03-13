@@ -73,11 +73,11 @@ const Home = () => {
                                 <CardHeader>
                                     <CardTitle>{item.title}</CardTitle>
                                 </CardHeader>
-                                <CardDescription className="ml-6">{new Date(item.createdAt).toLocaleDateString("en-ES", {
+                                <CardDescription className="ml-6">{new Date(item.createdAt).toLocaleDateString("es-ES", {
                                     weekday: "long",
                                     year: "numeric",
                                     month: "short",
-                                    day: "numeric",
+                                    day: "numeric"
                                 })}</CardDescription>
                                 <CardContent className="flex-grow">
                                     <p>{item.content.substring(0,100) + "..."}</p>
