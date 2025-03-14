@@ -5,6 +5,7 @@ import Layout from "@/views/layout/Layout.tsx";
 import CreateProposals from "@/views/propuestas/CreateProposals.tsx";
 import PropuestasUsuario from "@/views/propuestas/PropuestasUsuario.tsx";
 import InformacionLegislativa from "@/views/legislacion/informacionLegislativa.tsx";
+import informacionParlamentario from "@/views/legislacion/informacionParlamentario.tsx";
 
 export default function () {
     return(
@@ -19,6 +20,7 @@ export default function () {
                     <Route path="/proposals" Component={CreateProposals}/>
                     <Route path="/userProposals" Component={PropuestasUsuario}/>
                     <Route path="/informacionLegislativa" Component={InformacionLegislativa}/>
+                    <Route path="/informacionParlamentario" Component={informacionParlamentario}/>
                 </Route>
             </Routes>
         </BrowserRouter>

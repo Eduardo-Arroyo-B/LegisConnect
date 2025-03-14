@@ -26,6 +26,11 @@ const menuItems = [
         icon: iconInfo
     },
     {
+        title: "Informacion Parlamentaria",
+        path: "/informacionParlamentario",
+        icon: iconInfo
+    },
+    {
         title: "Cerrar Session",
         path: "/",
         icon: iconSettings

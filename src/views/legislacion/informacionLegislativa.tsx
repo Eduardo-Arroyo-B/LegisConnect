@@ -14,7 +14,7 @@ const informacionLegislativa = () => {
     // Funcion para pedir los datos
     const fetchData = async () => {
 
-        const url = "https://api-legisconnect-production.up.railway.app/legislacion/proyecto"
+        const url = `https://api-legisconnect-production.up.railway.app/legislacion/proyecto`;
 
         try {
             const response = await fetch(url)
@@ -31,6 +31,7 @@ const informacionLegislativa = () => {
     }, []);
 
     console.log(data)
+
 
     return (
         <section className="w-screen h-screen font-mono">
