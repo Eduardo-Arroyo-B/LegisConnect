@@ -632,10 +632,6 @@ body {
   position: relative;
 }
 
-.sticky {
-  position: sticky;
-}
-
 .inset-0 {
   inset: 0px;
 }
@@ -736,8 +732,8 @@ body {
   margin-left: 1.5rem;
 }
 
-.ml-\[20rem\] {
-  margin-left: 20rem;
+.ml-\[10rem\] {
+  margin-left: 10rem;
 }
 
 .mr-12 {
@@ -762,14 +758,6 @@ body {
 
 .mt-6 {
   margin-top: 1.5rem;
-}
-
-.ml-\[15rem\] {
-  margin-left: 15rem;
-}
-
-.ml-\[10rem\] {
-  margin-left: 10rem;
 }
 
 .flex {
